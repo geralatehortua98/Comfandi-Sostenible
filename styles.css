@@ -1,0 +1,149 @@
+:root {
+    --primary: #2E7D32;  /* Verde Bosque */
+    --secondary: #81C784;
+    --accent: #FFC107;   /* Amarillo Sol */
+    --alert: #e57373;    /* Rojo suave para el problema */
+    --dark: #1B5E20;
+    --bg-body: #f5f5f5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px; /* Tamaño móvil */
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* VISTAS */
+.view { display: none; padding: 20px; animation: fadeIn 0.5s; }
+.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* HEADER */
+.hero-header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin: -20px -20px 20px -20px;
+}
+.hero-icon { font-size: 3rem; margin-bottom: 10px; }
+.hero-header h1 { margin: 0; font-size: 2rem; line-height: 1.1; }
+.subtitle { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; }
+
+/* TARJETAS INFORMATIVAS */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.icon-circle {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 10px;
+    color: white;
+}
+.red { background-color: var(--alert); }
+.green { background-color: var(--primary); }
+
+.card h2 { margin: 10px 0; font-size: 1.2rem; color: var(--dark); }
+.card p { font-size: 0.95rem; line-height: 1.5; color: #555; margin: 0; }
+
+/* GUÍA PASO A PASO */
+.guide-section {
+    background-color: #f1f8e9;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.guide-title { text-align: center; color: var(--primary); margin-top: 0; }
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.step-number {
+    background: var(--primary);
+    color: white;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+.step-content strong { display: block; color: var(--dark); }
+.step-content p { margin: 3px 0 0; font-size: 0.9rem; }
+
+/* FORMULARIOS Y BOTONES */
+label { display: block; margin-top: 15px; font-weight: bold; color: var(--dark); }
+input, select, textarea {
+    width: 100%; padding: 12px; margin-top: 5px;
+    border: 1px solid #ddd; border-radius: 8px;
+    box-sizing: border-box; font-size: 1rem;
+    background: #fafafa;
+}
+input:focus { border-color: var(--primary); outline: none; background: white; }
+
+.cta-container { text-align: center; margin: 30px 0; }
+
+.btn {
+    background: var(--primary); color: white;
+    border: none; padding: 15px 30px; width: 100%;
+    border-radius: 50px; font-size: 1.1rem; font-weight: bold;
+    cursor: pointer; box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+    transition: transform 0.2s;
+}
+.btn:active { transform: scale(0.98); }
+.btn-secondary { background: #999; margin-top: 10px; box-shadow: none; }
+.btn-print { background: #333; margin-top: 15px; }
+
+/* ANIMACIÓN DE PULSO PARA EL BOTÓN PRINCIPAL */
+.pulse-animation { animation: pulse 2s infinite; }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* CERTIFICADO */
+.cert-container {
+    border: 8px double var(--primary);
+    padding: 30px 20px;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+.cert-header h3 { color: var(--dark); text-transform: uppercase; margin: 0 0 10px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px;}
+.cert-name { font-size: 1.5rem; color: var(--primary); font-weight: bold; margin: 10px 0; font-family: cursive; }
+.highlight-name { color: #d32f2f; font-size: 1.8rem; }
+.dedication-text { font-style: italic; color: #666; margin: 20px 0; }
+.cert-badge {
+    width: 60px; height: 60px; background: var(--accent);
+    border-radius: 50%; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+}
+.small-text { font-size: 0.7rem; color: #999; margin-top: 20px; }
+.footer-text { text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 20px; }

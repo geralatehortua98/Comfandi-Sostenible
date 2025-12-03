@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Tech Comfandi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container">
+    
+    <div id="view-intro" class="view active">
+        
+        <header class="hero-header">
+            <span class="material-icons hero-icon">forest</span>
+            <h1>Comfandi Sostenible<br>y Conectada</h1>
+            <p class="subtitle">Comuna 17: Limpia, Verde y Segura</p>
+        </header>
+
+        <section class="card problem-card">
+            <div class="icon-circle red">
+                <span class="material-icons">two_wheeler</span>
+            </div>
+            <h2>El Desafío</h2>
+            <p>
+                El alto tránsito de motocicletas en nuestro barrio genera 
+                <strong>ruido excesivo y contaminación (CO2)</strong> que afecta nuestra salud 
+                y tranquilidad.
+            </p>
+        </section>
+
+        <section class="card solution-card">
+            <div class="icon-circle green">
+                <span class="material-icons">park</span>
+            </div>
+            <h2>La Solución: TÚ</h2>
+            <p>
+                Al sembrar este árbol, estás instalando un <strong>filtro natural</strong>. 
+                Él absorberá el humo, reducirá el ruido y nos dará sombra fresca.
+            </p>
+        </section>
+
+        <section class="guide-section">
+            <h2 class="guide-title">Guía de Siembra</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong>Prepara el terreno</strong>
+                    <p>Haz un hueco de 40cm de profundidad y 40cm de ancho.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong>Libera la raíz</strong>
+                    <p>Retira la bolsa plástica con mucho cuidado para no dañar el pan de tierra.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <strong>Protege y Riega</strong>
+                    <p>Cubre con tierra sin apretar demasiado y dálle su primer riego generoso.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-container">
+            <p>¿Ya completaste la misión?</p>
+            <button class="btn pulse-animation" onclick="goToForm()">
+                📝 ¡Ya sembré! Quiero mi Certificado
+            </button>
+        </div>
+
+        <div class="footer-text">
+            Acción Solidaria - UNAD 2025<br>
+            Ingeniería de Sistemas
+        </div>
+    </div>
+
+    <div id="view-form" class="view">
+        <h2 class="primary-text">Registro de Héroe/Heroína</h2>
+        <p>Llena estos datos para oficializar tu siembra.</p>
+        
+        <form id="treeForm" onsubmit="generateCertificate(event)">
+            <label>Tu Nombre (Padrino/Madrina):</label>
+            <input type="text" id="userName" placeholder="Ej: Familia Pérez" required>
+
+            <label>Nombre para el árbol:</label>
+            <input type="text" id="treeName" placeholder="Ej: 'Esperanza'" required>
+
+            <label>Especie sembrada:</label>
+            <select id="treeType">
+                <option value="Guayacán">Guayacán</option>
+                <option value="Carbonero">Carbonero</option>
+                <option value="Gualanday">Gualanday</option>
+                <option value="Árbol Frutal">Árbol Frutal</option>
+                <option value="Ornamental">Ornamental</option>
+            </select>
+
+            <label>Un deseo para el barrio:</label>
+            <textarea id="dedication" rows="2" placeholder="Ej: Menos ruido, más vida."></textarea>
+
+            <button type="submit" class="btn">✨ Generar Certificado</button>
+            <button type="button" class="btn btn-secondary" onclick="goBack()">Volver a la Guía</button>
+        </form>
+    </div>
+
+    <div id="view-cert" class="view">
+        <div class="cert-container" id="printableArea">
+            <div class="cert-header">
+                <h3>Certificado de<br>Gestión Ambiental</h3>
+            </div>
+            
+            <p>Se certifica que:</p>
+            <div class="cert-name" id="displayUser">Nombre</div>
+            
+            <p>Ha contribuido a mitigar la huella de carbono en<br><strong>Ciudadela Comfandi</strong> sembrando un:</p>
+            <strong id="displayType" class="tree-type-text">Árbol</strong>
+            
+            <p>Llamado:</p>
+            <div class="cert-name highlight-name" id="displayTreeName">Nombre</div>
+
+            <p class="dedication-text">" <span id="displayDedication">...</span> "</p>
+
+            <div class="cert-badge">
+                <span class="material-icons" style="font-size: 40px; color: #fff;">verified</span>
+            </div>
+            
+            <div class="small-text">
+                Gerardine Atehortua Giraldo<br>
+                <strong>Ingeniería de Sistemas - UNAD</strong>
+            </div>
+        </div>
+
+        <button class="btn btn-print" onclick="window.print()">🖨️ Guardar / Imprimir</button>
+        <button class="btn" style="background:#555; margin-top:10px" onclick="location.reload()">🔄 Inicio</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
